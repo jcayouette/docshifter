@@ -1,5 +1,13 @@
 ENTITY_REPLACEMENT_TABLE = {
 # This hash map includes both SUSE common doc entities and SUSE doc network entities
+#
+# Example code to perform entity replacement
+# some_hash = {
+# "a" => "A",
+# "b" => "B",
+# "c" => "C",
+# }
+# "abcdefgabcdefg".gsub(Regexp.union(some_hash.keys), some_hash)
 
     ':: ' => '{two-colons} ',
 
@@ -184,16 +192,18 @@ ENTITY_REPLACEMENT_TABLE = {
     '&gateipv6; '         => '{2002:c0a8:501::} ',
 
     # IP addresses (clients)
-    '&wsIip; '      => '192.168.2.100',
-    '&wsIipv6; '    => '2002:c0a8:264::',
-    '&wsIIip; '     => '192.168.2.101',
-    '&wsIIipv6; '   => '2002:c0a8:265::',
-    '&wsIIIip; '    => '192.168.2.102',
-    '&wsIIIipv6; '  => '2002:c0a8:266::',
-    '&wsIVip; '     => '192.168.2.103',
-    '&wsIVipv6; '   => '2002:c0a8:267::',
-    '&vpnclient1; ' => '192.168.2.110',
-    '&vpnclient2; ' => '192.168.2.111',
+    '&wsIip; '      => '{192.168.2.100}',
+    '&wsIipv6; '    => '{2002:c0a8:264::}',
+    '&wsIIip; '     => '{192.168.2.101}',
+    '&wsIIipv6; '   => '{2002:c0a8:265::} ',
+    '&wsIIIip; '    => '{192.168.2.102}',
+    '&wsIIIipv6; '  => '{2002:c0a8:266::}',
+    '&wsIVip; '     => '{192.168.2.103}',
+    '&wsIVipv6; '   => '{2002:c0a8:267::}',
+    '&vpnclient1; ' => '{192.168.2.110}',
+    '&vpnclient2; ' => '{192.168.2.111}',
 }
 
 puts ENTITY_REPLACEMENT_TABLE
+
+
